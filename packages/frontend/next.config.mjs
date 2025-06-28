@@ -1,8 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  reactStrictMode: true,
-  trailingSlash: true, // utile per Amplify static hosting
-};
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+export default {
+  output: 'export',
+  // disabilita tutte le funzioni server
+  experimental: { 
+    appDir: false,
+    serverComponents: false,
+  },
+};

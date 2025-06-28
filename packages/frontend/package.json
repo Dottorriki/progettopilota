@@ -24,12 +24,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "format": "prettier -c --write \"**/*\"",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "export:prod": "set NODE_ENV=production&& next build && next export"
+    "export:prod": "set NODE_ENV=production&& next build && next export",
+    "build": "NODE_ENV=production next build"
   },
   "eslintConfig": {
     "extends": [
