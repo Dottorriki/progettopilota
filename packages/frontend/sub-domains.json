@@ -1,0 +1,4 @@
+[
+  { "prefix": "",    "branchName": "staging" },
+  { "prefix": "www", "branchName": "staging" }
+]

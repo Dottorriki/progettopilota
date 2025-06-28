@@ -1,0 +1,29 @@
+version: 1
+
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "=== PreBuild phase ==="
+        - nvm install 22
+        - nvm use 22
+        - node -v
+        - npm cache clean --force
+        - rm -rf node_modules package-lock.json
+        - npm install --legacy-peer-deps
+    build:
+      commands:
+        - echo "=== Build phase ==="
+        - npm run build
+    postBuild:
+      commands:
+        - echo "=== Contenuto della cartella out ==="
+        - ls -R out
+  artifacts:
+    baseDirectory: out
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+
